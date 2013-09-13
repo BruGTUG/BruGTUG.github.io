@@ -8,5 +8,10 @@ handlers:
   static_dir: css
 - url: /js
   static_dir: js
+- url: /images
+  static_dir: images
+- url: /lib
+  static_dir: lib
 - url: /.*
-  script: devchat.py
+  static_files: index.html
+  upload: index.html
