@@ -7,7 +7,7 @@
             <a ng-show="event.iconUrl" class="pull-left" ng-href="https://developers.google.com{{event.link}}" target="_blank"><img class="media-object" ng-src="https://developers.google.com{{event.iconUrl}}"></a>
             <div class="media-body">
                 <h4 class="media-heading"><a ng-href="https://developers.google.com{{event.link}}" target="_blank">{{event.title}}</a></h4>
-                <h5>{{event.location}}<br/>{{event.start | date:'EEEE, MMMM d, y - h:mm a'}}</h5>
+                <h5>{{event.location}}<br/>{{event.start | date:'EEEE, MMMM d, y - hh:mm'}}</h5>
                 <p>{{event.description}}</p>
             </div>
         </div>
@@ -18,8 +18,8 @@
             <a ng-show="event.iconUrl" class="pull-left" ng-href="https://developers.google.com{{event.link}}" target="_blank"><img class="media-object" ng-src="https://developers.google.com{{event.iconUrl}}"></a>
             <div class="media-body">
                 <h4 class="media-heading"><a ng-href="https://developers.google.com{{event.link}}" target="_blank">{{event.title}}</a></h4>
-                <h5>{{event.location}}<br/>{{event.start | date:'EEEE, MMMM d, y - h:mm a'}}</h5>
-                <p ng-bind-html-unsafe="event.description"></p>
+                <h5>{{event.location}}<br/>{{event.start | date:'EEEE, MMMM d, y - hh:mm'}}</h5>
+                <p ng-bind-html-unsafe="event.description"></p>              		          
             </div>
         </div>
     </div>
