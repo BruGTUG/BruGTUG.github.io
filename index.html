@@ -33,6 +33,20 @@
                                 <li ng-class="{ 'active' : activeTab=='photos' }"><a href="#photos">Photos</a></li>
                                 <li><a ng-href="{{ google_plus_link }}" target="_blank">Google+</a></li>
                             </ul>
+                  						<span id="signinButton">
+                  						  <span
+                  							class="g-signin"
+                  							data-callback="signinCallback"
+                  							data-clientid="62485595152-jod7s5dtmg91na1761f3iarsugcnku8q.apps.googleusercontent.com"
+                  							data-cookiepolicy="single_host_origin"
+                  							data-requestvisibleactions="http://schemas.google.com/AddActivity"
+                  							data-scope="https://www.googleapis.com/auth/plus.login">
+                  						  </span>
+                  						</span>
+                  						<span id="revokeButton">
+                  							<button>Revoke G+ access</button>
+                  						</span>
+                            
                         </div>
                     </div>
                 </div>
@@ -40,5 +54,14 @@
             <div class="container">
                 <div class="row" ng-view></div>
             </div>
+            
+      			<script type="text/javascript">
+      			  (function() {
+      			   var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+      			   po.src = 'https://apis.google.com/js/client:plusone.js';
+      			   var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+      			 })();
+      			</script>
+            
         </body>
     </html>    
