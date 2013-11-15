@@ -139,13 +139,13 @@
 		});
 
 
-		function printLabel(attendee, company) {
+		function printLabel(name, interests) {
 			if (printers.length == 0 || !label) return;
 
-			if (!company) company = "";
+			if (!interests) interests = "";
 
-			label.setObjectText("attendee", attendee);
-			label.setObjectText("company", company);
+			label.setObjectText("name", name);
+			label.setObjectText("interests", interests);
 			label.print(printers[0].name);
 		}
 
@@ -363,7 +363,7 @@
 				}
 
 
-				printLabel(attendee[0], attendee[1]);
+				printLabel(attendee[0] + " " + attendee[1], attendee[6]);
 				delete(attendees[id]);
 				$("#checkin").fadeOut(function(){
 					$("#result").empty().append("Hi " + attendee[0] + "!").fadeIn(function(){
