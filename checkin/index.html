@@ -318,12 +318,12 @@
 								item_keys = Object.keys(arrayList[index]);
 							} else {
 								item = arrayList[index];
-								if (item[item_keys[0]]) {
+								if (item[item_keys[10]]) {
 									var attendee = {};
 									for(var i=1,j=0; i<item_keys.length-1; i++, j++) {
 										attendee[j] = item[item_keys[i]];
 									}
-									attendees[item[item_keys[0]].toLowerCase()] = attendee;
+									attendees[item[item_keys[10]].toLowerCase()] = attendee;
 								}
 							}
 						}
@@ -358,10 +358,10 @@
 				}
 
 
-				printLabel(attendee[0], attendee[1]);
+				printLabel(attendee[1], attendee[2]);
 				delete(attendees[id]);
 				$("#checkin").fadeOut(function(){
-					$("#result").empty().append("olá " + attendee[0] + "!").fadeIn(function(){
+					$("#result").empty().append("Hi " + attendee[1] + "!").fadeIn(function(){
 						tmrShowCheckin = setTimeout(showCheckin, 2000);
 					});
 				})
