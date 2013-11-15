@@ -29,6 +29,7 @@
 
 
 		var attendees = {};
+		var attendees_email = {};
 		var checked_attendees = {};
 
 		var arrayList = {};
@@ -75,7 +76,7 @@
 			$(document).keypress(function(e) {
 				if(e.which == 13) {
 					if ($("#txtEmail").val() != "") {
-						validateAttendee($("#txtEmail").val());
+						validateAttendee(attendees_email[$("#txtEmail").val()]);
 						$("#txtEmail").val("");
 					} else {
 						showCheckin();
@@ -150,7 +151,7 @@
 
 		function loadLabelFromWeb() {                     
 			// use jQuery API to load label
-			$.get("youtubedevday.label", function(labelXml) {
+			$.get("DevFestBelgium.label", function(labelXml) {
 				label = dymo.label.framework.openLabelXml(labelXml);
 				label_loaded = true;
 				// check that label has an address object
@@ -314,6 +315,7 @@
 						}
 
 						attendees = {};
+						attendees_email = {};
 						var arrayListKeys;
 						for (index in arrayList) {
 							if (index == "1") {
@@ -325,7 +327,8 @@
 									for(var i=1,j=0; i<item_keys.length-1; i++, j++) {
 										attendee[j] = item[item_keys[i]];
 									}
-									attendees[item[item_keys[10]].toLowerCase()] = attendee;
+									attendees[item[item_keys[10]]] = attendee;
+									attendees_email[item[item_keys[3]].toLowerCase()] = item[item_keys[10]];
 								}
 							}
 						}
@@ -360,18 +363,18 @@
 				}
 
 
-				printLabel(attendee[1], attendee[2]);
+				printLabel(attendee[0], attendee[1]);
 				delete(attendees[id]);
 				$("#checkin").fadeOut(function(){
-					$("#result").empty().append("Hi " + attendee[1] + "!").fadeIn(function(){
+					$("#result").empty().append("Hi " + attendee[0] + "!").fadeIn(function(){
 						tmrShowCheckin = setTimeout(showCheckin, 2000);
 					});
 				})
 
 			} else {
-				var mensagem = "registro não encontrado!"; //ID not found
+				var mensagem = "not registered!"; //ID not found
 				if (checked_attendees[id]) {
-					mensagem = "checkin já realizado!"; //checkin already done
+					mensagem = "already checked-in!"; //checkin already done
 				}
 
 				$("#checkin").fadeOut(function(){
@@ -410,8 +413,8 @@
   </head>
   <body>
 
-	<img src="img/hack.png" alt="" id="logo" />
-	<h1>retire sua credencial</h1>
+	<img src="../static/images/logo_small_tr.png" alt="" id="logo" />
+	<h1>Get Your Name Badge</h1>
 
 	<div id="begin">
 
@@ -423,7 +426,7 @@
 	</div>
     <div id="checkin">
     	<label>
-    		mostre o QRCode para a webcam ou digite seu e-mail informado no cadastro e pressione &lt;ENTER&gt;
+    		hold your QR code in front of the camera or type your email address, followed by &lt;ENTER&gt;
     		<!-- show the QRCode or type your e-mail and press ENTER -->
     	</label>
 		<input type="text" id="txtEmail"></input>
@@ -440,7 +443,7 @@
 	<canvas id="qr-canvas" width="800" height="600" style="display: none;"></canvas>
 	<div id="outdiv"></div>
 
-	<h2>Desenvolvido pelo GDG São Paulo - Setembro/2013 <span><!-- # of checked attendees/total --></span> </h2>
+	<h2>Developed by GDG São Paulo - Setembro/2013 <span><!-- # of checked attendees/total --></span> </h2>
 
   </body>
 </html>
