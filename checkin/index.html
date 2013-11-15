@@ -76,7 +76,12 @@
 			$(document).keypress(function(e) {
 				if(e.which == 13) {
 					if ($("#txtEmail").val() != "") {
-						validateAttendee(attendees_email[$("#txtEmail").val()]);
+						var regKey = attendees_email[$("#txtEmail").val()];
+						if (!regKey){
+							regKey = "xxx";
+						}
+						validateAttendee(regKey.toLowerCase());
+							
 						$("#txtEmail").val("");
 					} else {
 						showCheckin();
@@ -349,8 +354,7 @@
 
 
 
-		function validateAttendee(id) {
-			id = id.toLowerCase();
+		function validateAttendee(id) {			
 			if (attendees[id]) {
 				attendee = attendees[id];
 				checked_attendees[id] = attendee;
