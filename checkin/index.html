@@ -76,11 +76,11 @@
 			$(document).keypress(function(e) {
 				if(e.which == 13) {
 					if ($("#txtEmail").val() != "") {
-						var regKey = attendees_email[$("#txtEmail").val()];
+						var regKey = attendees_email[$("#txtEmail").val().toLowerCase()];
 						if (!regKey){
 							regKey = "xxx";
 						}
-						validateAttendee(regKey.toLowerCase());
+						validateAttendee(regKey);
 							
 						$("#txtEmail").val("");
 					} else {
