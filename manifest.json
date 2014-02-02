@@ -1,0 +1,25 @@
+{
+  "manifest_version": 2,
+
+  "name": "GTUG Brussels",
+  "description": "The extension for the Brussels Google Technology user group",
+  "version": "1.0",
+
+  "permissions": [
+    "https://brussels-gtug.org/*",
+	"http://fonts.googleapis.com/*",
+	"http://netdna.bootstrapcdn.com/*",
+	"http://code.angularjs.org/*",
+	"http://code.angularjs.org/*",
+	"https://apis.google.com/*"
+	
+  ],
+  "sandbox":{
+    "pages":["index.html"]
+  },
+  "app": {
+    "background": {
+      "scripts": ["./chrome-app/background.js"]
+    }
+  }
+}
