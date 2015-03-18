@@ -8,8 +8,8 @@ boomerang.factory('Config', function () {
         'meetup'        : 'gdg-brussels',
         'dateFormat'    : 'EEEE, MMMM d, y - h:mm a',
         'cover' : {
-            title : 'Belgium Android Community',
-            subtitle : 'Learn, Share and Create',
+            title : 'I/O Extended 2015 Brussels',
+            subtitle : 'Watch the live stream of Google I/O and meet the community',
             button : {
                 text : 'Join',
                 url : 'https://bit.ly/BruGTUG'
