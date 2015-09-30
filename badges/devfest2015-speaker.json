@@ -1,0 +1,7 @@
+{
+    "name": "DevFest Belgium 2015 Speaker Badge Issuer",
+    "description": "Issues badge to speakers of DevFest Belgium 2015",
+    "image": "http://gdg.brussels/badges/devfest2015-speaker.png",
+    "criteria": "http://gdg.brussels/badges/devfest2015-speaker-criteria.html",
+    "issuer": "http://gdg.brussels/badges/badge-issuer.json"
+}
