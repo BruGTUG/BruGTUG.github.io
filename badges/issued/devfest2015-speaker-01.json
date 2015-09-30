@@ -1,0 +1,14 @@
+{
+  "uid": "devfest2015-speaker-01",
+  "recipient": {
+    "type": "email",
+    "identity": "mail@friedger.de",
+    "hashed": false
+  },
+  "issuedOn":  1388534400,
+  "badge": "http://gdg.brussels/badges/devfest2015-speaker-class.json",
+  "verify": {
+    "type": "hosted",
+    "url": "http://gdg.brussels/badges/issued/devfest2015-speaker-01.json"
+  }
+}
