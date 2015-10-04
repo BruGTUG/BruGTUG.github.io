@@ -46,7 +46,7 @@ angular.module('gdgXBoomerang')
         'id'            : '105068877693379070381',
         'google_api'    : 'AIzaSyBuW84I4CwVyhC9F5lEmdgKjfHEABpopUM',
         'pwaId'        : '5923085386435987489', //picasa web album id, must belong to google+ id above
-        'domain'        : 'http://gdg-brussels.org',
+        'domain'        : 'http://gdg.brussels',
         'meetup'        : 'gdg-brussels',
         'dateFormat'    : 'EEEE, MMMM d, y - h:mm a',
         'cover' : {
@@ -54,7 +54,7 @@ angular.module('gdgXBoomerang')
             subtitle : 'See all events.',
             button : {
                 text : 'Join',
-                url : 'https://meetup.com/gdg-brussels'
+                url : 'http://www.meetup.com/gdg-brussels'
             }
         },
         'activities': {
@@ -242,11 +242,11 @@ angular.module('gdgXBoomerang')
             vm.loading = false;
             vm.status = 'ready';
         })
-        .error(function (response, error) {
+        .error(function (response) {
             vm.upcomingError = 'Sorry, we failed to retrieve the upcoming events from the GDG-X Hub API.';
             vm.loading = false;
             vm.status = 'ready';
-            $log.debug('Sorry, we failed to retrieve the upcoming events from the GDG-X Hub API: ' + response + error);
+            $log.debug('Sorry, we failed to retrieve the upcoming events from the GDG-X Hub API: ' + response);
         });
 
     var getPastEventsPage = function(page) {
