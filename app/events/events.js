@@ -24,11 +24,11 @@ angular.module('gdgXBoomerang')
             vm.loading = false;
             vm.status = 'ready';
         })
-        .error(function (response, errror) {
+        .error(function (response) {
             vm.upcomingError = 'Sorry, we failed to retrieve the upcoming events from the GDG-X Hub API.';
             vm.loading = false;
             vm.status = 'ready';
-            $log.debug('Sorry, we failed to retrieve the upcoming events from the GDG-X Hub API: ' + response + error);
+            $log.debug('Sorry, we failed to retrieve the upcoming events from the GDG-X Hub API: ' + response);
         });
 
     var getPastEventsPage = function(page) {
