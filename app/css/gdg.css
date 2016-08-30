@@ -109,9 +109,6 @@ md-card.md-default-theme,
 md-grid-list md-grid-tile {
     border-radius: 3px;
 }
-md-card-content div[layout] {
-    border-bottom: 1px solid #E0E0E0;
-}
 md-grid-list md-grid-tile md-grid-tile-footer {
     background: rgba(0, 0, 0, 0.3);
 }
@@ -126,6 +123,10 @@ md-grid-list md-grid-tile md-grid-tile-footer h3 {
 }
 md-card > img {
     border-radius: 3px;
+}
+gplus-person md-card > img,
+.description-card > img {
+    border-radius: 3px 3px 0 0;
 }
 md-card a {
     font-size: 14px;
@@ -145,4 +146,17 @@ news-item-footer [id*="___plusone"] {
 }
 md-toolbar [id*="___plusone"] {
     padding-top: 5px !important;
+}
+md-toolbar {
+    margin: 0 !important;
+}
+.newsContent md-card {
+    margin: 0;
+}
+footer {;
+    background-color: rgba(21, 101, 192, 0.2);
+    font-size: 10pt;
+    padding: 10px;
+    margin-top: 20px;
+    border-top: 1px solid #E5E5E5;
 }
